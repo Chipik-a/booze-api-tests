@@ -1,0 +1,23 @@
+{
+  "name": "booze-api-tests",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Anna Popelniukh",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "lint": "eslint . --ext .ts,.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
+    "eslint": "^10.1.0",
+    "globals": "^17.4.0",
+    "typescript-eslint": "^8.57.1"
+  }
+}
