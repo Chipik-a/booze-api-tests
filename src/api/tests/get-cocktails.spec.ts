@@ -35,6 +35,25 @@ test.describe('Cocktails API', () => {
 
         expect(singleBody.id).toBe(firstId);
         expect(singleBody).toHaveProperty('name');
+    });
+
+    test('GET /cocktails/{invalid_id}', async() => {
+        const invalidId = 999999;
+        const response = await client.getCocktailById(invalidId);
+
+        expect(response.status()).toBe(404);
+        const body = await response.json();
+        console.log("Error body:", body);
+        expect(body).toBeTruthy();
+
+        expect(body).toHaveProperty('name');
+        expect(body.name).toBe('EntityNotFoundError');
+
+        expect(body).toHaveProperty('statusCode');
+        expect(body.statusCode).toBe(404);
+
+        expect(body).toHaveProperty('message');
+        expect(body.message).toContain('does not exist');
     })
 });
 
